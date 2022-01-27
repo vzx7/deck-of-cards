@@ -8,6 +8,7 @@
 
 #include "Suit.h"
 #include "Order.h"
+
 struct Card {
     Suit suit;
     Order order;

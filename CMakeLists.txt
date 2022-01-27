@@ -7,6 +7,9 @@ include_directories(src/headers)
 
 add_executable(deck_of_card
         src/headers/Card.h
+        src/headers/constants.h
+        src/headers/utils.h
+        src/utils.cpp
         src/CardDeck.cpp
         src/main.cpp)
 
