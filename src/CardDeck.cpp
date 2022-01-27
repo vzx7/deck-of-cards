@@ -18,7 +18,7 @@ string CardDeck::showCardByNumber(unsigned short number) {
 }
 
 void CardDeck::shuffleDeck() {
-    Card newDec[CARD_COUNT];
+    Card newDeck[CARD_COUNT];
     unsigned short numbers[CARD_COUNT];
     unsigned short min = 0;
     unsigned short max = CARD_COUNT - 1;
@@ -44,11 +44,11 @@ void CardDeck::shuffleDeck() {
 
         cout << " * " << endl;
         numbers[i] = slot;
-        newDec[slot] = deck[i];
+        newDeck[slot] = deck[i];
     }
 
     for (int i = 0; i < CARD_COUNT; i++) {
-        deck[i] = newDec[i];
+        deck[i] = newDeck[i];
     }
 }
 
@@ -82,7 +82,7 @@ string CardDeck::dealCardBySix() {
     string part = "Карты выданы так:\n";
     for (int j = 0; j < count; ++j) {
         int num = (j + 1);
-        part += "Карта " + to_string(num)  + "№: " + "Масть - " + _mapBySuit(cards[j].suit) + " тип - " + _mapByOrder(cards[j].order) + ".\n";
+        part += "Карта " + to_string(num)  + "№: " + "Масть - " + _mapBySuit(cards[j].suit) + ", тип - " + _mapByOrder(cards[j].order) + ".\n";
     }
 
     return part;
