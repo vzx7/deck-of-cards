@@ -7,13 +7,17 @@
 #include <iostream>
 #include <string>
 #include "Card.h"
+#include "constants.h"
 
 using namespace std;
 class CardDeck {
 private:
     void _setDeck();
+    string _showCard(unsigned short order);
+    string _mapBySuit(Suit suit);
+    string _mapByOrder(Order order);
 public:
-    Card deck[37];
+    Card deck[CARD_COUNT];
     CardDeck();
     void sortDeck();
     string showCardByOrder(unsigned short order);

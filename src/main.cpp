@@ -1,24 +1,26 @@
 //
 // Created by zx on 1/27/22.
 //
-
+#include <typeinfo>
 #include "Card.h"
 #include "CardDeck.h"
+#include "headers/constants.h"
 
 int main(int argc, const char *argv[]) {
     unsigned int count;
-    CardDeck *cardDeck;
+    CardDeck *cardDeck = new CardDeck();
     Card *deck = cardDeck->deck;
 
-    cout << "Колода состоит из 36 карт." << endl;
+    cout << "Колода состоит из "<< CARD_COUNT << " карт." << endl;
     cout << "Сейчас они находятся в следующем порядке:" << endl;
     cardDeck->showAllCards();
 
-    cout << "Введите число от 6 до 14." << endl;
-    unsigned short order;
-    cin >> order;
-    if (order < 15 && order > 5) {
-        cardDeck->showCardByOrder(order);
+    cout << "\nВведите число от 0 до " << CARD_COUNT << "." << endl;
+    unsigned short num;
+    cin >> num;
+
+    if (num <= CARD_COUNT && num >= 0) {
+        cout << cardDeck->showCardByOrder(num) << endl;
     }
     cout << "Давайте теперь отсортируем колоду." << endl;
     cardDeck->sortDeck();
