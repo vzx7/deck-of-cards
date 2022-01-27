@@ -25,6 +25,7 @@ void enterNumber(CardDeck cardDeck) {
 }
 
 int main(int argc, const char *argv[]) {
+
     // Получим классы колоды
     CardDeck *cardDeck = new CardDeck();
     cout << "\n\nИтак, колода состоит из "<< CARD_COUNT << " карт." << endl;

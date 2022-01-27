@@ -9,6 +9,8 @@
 
 
 CardDeck::CardDeck() {
+    // Нужно для рандомизации чисел, чтобы тусовать карты
+    srand(static_cast<unsigned int>(time(0)));
     _setDeck();
 }
 
@@ -42,7 +44,6 @@ void CardDeck::shuffleDeck() {
             max = nMax <= min ? min + 1 : nMax;
         }
 
-        cout << " * " << endl;
         numbers[i] = slot;
         newDeck[slot] = deck[i];
     }
@@ -68,13 +69,13 @@ string CardDeck::dealCardBySix() {
         unsigned short j = 0;
 
         while (j <= count) {
-            // хак - потому что рандом работает страшно медлено...
-             while (arr[j] == n) {
-                n = getRandomNumber(0, CARD_COUNT - 1);
-            }
+             if (arr[j] == n) {
+                 n = getRandomNumber(0, CARD_COUNT - 1);
+                 break;
+             }
             j++;
         }
-        cout << " * " << endl;
+
         arr[i] = n;
         cards[i] = deck[n];
         i++;
