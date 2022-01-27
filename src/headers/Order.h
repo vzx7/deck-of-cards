@@ -5,7 +5,6 @@
 #ifndef DECK_OF_CARD_ORDER_H
 #define DECK_OF_CARD_ORDER_H
 enum Order {
-    TEN = 10,
     JACK = 11,
     LADY = 12,
     KING = 13,
